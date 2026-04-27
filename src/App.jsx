@@ -7,7 +7,10 @@ const STORE = {
   location: 'Atendimento em todo o Brasil',
 };
 
-const CATEGORIES = ['Todos', 'Adaptadores', 'Construção', 'Fios', 'Ferramentas'];
+const CATEGORIES = ['Todos', 'Adaptadores', 'Construção', 'Fios', 'Ferramentas', Desemepandeiras , Hidráulica
+  
+
+];
 
 const PRODUCTS = [
   {
