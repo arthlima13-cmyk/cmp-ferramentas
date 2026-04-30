@@ -2,84 +2,350 @@ import React, { useMemo, useState } from 'react';
 
 const STORE = {
   name: 'CMP Ferramentas',
-  whatsapp: '5511999999999',
+  whatsapp: '5511975410095',
   phoneLabel: '(11) 99999-9999',
   location: 'Atendimento em todo o Brasil',
 };
 
-const CATEGORIES = ['Todos', 'Adaptadores', 'Construção', 'Fios', 'Ferramentas', Desemepandeiras , Hidráulica
-  
-
+const CATEGORIES = [
+  'Todos',
+  'Adaptadores',
+  'Construção',
+  'Fios',
+  'Ferramentas',
+  'Desempenadeiras',
+  'Hidráulica',
 ];
 
 const PRODUCTS = [
   {
-    id: 'adaptador-t',
-    name: 'Adaptador T 2P+T',
+    id: 'adaptador-t-reforcado',
+    name: 'Adaptador T Reforçado',
     category: 'Adaptadores',
-    description: 'Adaptador resistente para uso residencial e profissional.',
-    image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=80',
+    description: 'Adaptador para uso residencial e profissional.',
+    image: 'https://images.unsplash.com/photo-1777476682610-277d7c15915f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     variants: [
-      { id: '10a', label: '10A', price: 12.9, stock: 28, weightKg: 0.15 },
-      { id: '20a', label: '20A', price: 16.9, stock: 16, weightKg: 0.18 },
+      { id: '10a', label: '10A 20A', price: 1.30, stock: 20, weightKg: 0.2 },
+  
+    
     ],
   },
   {
-    id: 'inforca-gato',
-    name: 'Inforca Gato',
+    id: 'adaptador-cubo-colorido',
+    name: 'Adaptador Cubo Colorido',
     category: 'Adaptadores',
-    description: 'Produto com opções de tamanho e mudança automática de preço.',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80',
+    description: 'Adaptador para uso residencial e profissional.',
+    image: 'https://images.unsplash.com/photo-1777475369764-ab87f1ae4c9c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     variants: [
-      { id: 'p', label: 'Pequeno', price: 19.9, stock: 20, weightKg: 0.25 },
-      { id: 'm', label: 'Médio', price: 24.9, stock: 14, weightKg: 0.35 },
-      { id: 'g', label: 'Grande', price: 31.9, stock: 9, weightKg: 0.45 },
+      { id: '10a', label: '10A 20A', price: 2.50, stock: 20, weightKg: 0.2 },
+    
     ],
   },
   {
-    id: 'cimento-cola',
-    name: 'Cimento Cola Premium',
+    id: 'pino-macho',
+    name: 'Pino Macho',
+    category: 'Adaptadores',
+    description: 'Adaptador para uso residencial e profissional.',
+    image: 'https://images.unsplash.com/photo-1777477280302-8fd92dfa2182?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    variants: [
+      {
+        id: 'branco',
+        label: 'Branco',
+        price: 1.30,
+        stock: 20,
+        weightKg: 0.1,
+        image: 'https://images.unsplash.com/photo-1777477280302-8fd92dfa2182?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      },
+      {
+        id: 'preto',
+        label: 'Preto',
+        price: 1.30,
+        stock: 20,
+        weightKg: 0.1,
+        image: 'https://images.unsplash.com/photo-1777480226851-43e7f83d0182?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      },
+    ],
+  },
+  {
+    id: 'bob-esponja-porcelana',
+    name: 'Bob Esponja Porcelana',
+    category: 'Adaptadores',
+    description: 'Adaptador para uso residencial e profissional.',
+    image: 'https://images.unsplash.com/photo-1777487932963-f4c7c5378bbd?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    variants: [
+      { id: '10a', label: '10A 20A', price: 1.50, stock: 20, weightKg: 0.2 },
+     
+    ],
+  },
+  {
+    id: 'bob-esponja-tradicional',
+    name: 'Bob Esponja Tradicional',
+    category: 'Adaptadores',
+    description: 'Adaptador para uso residencial e profissional.',
+    image: 'https://images.unsplash.com/photo-1777487932963-f4c7c5378bbd?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    variants: [
+      { id: '10a', label: '10A 20A', price: 0.90, stock: 20, weightKg: 0.2 },
+     
+    ],
+  },
+  {
+    id: 'adaptador-flexivel-fixo',
+    name: 'Adaptador Flexível Fixo',
+    category: 'Adaptadores',
+    description: 'Adaptador para uso residencial e profissional.',
+    image: 'https://images.unsplash.com/photo-1777488110029-bde929b0267f?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    variants: [
+      { id: '10a', label: '10A 20A', price: 1.60, stock: 20, weightKg: 0.3 },
+      
+    ],
+  },
+  {
+    id: 'tomada-em-barra',
+    name: 'Tomada em Barra',
+    category: 'Adaptadores',
+    description: 'Adaptador para uso residencial e profissional.',
+    image: 'https://images.unsplash.com/photo-1777480577334-2542aac17e4f?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    variants: [
+      {
+        id: '10a20a-branca',
+        label: '10A 20A Branca',
+        price: 0,
+        stock: 20,
+        weightKg: 0.4,
+        image: 'https://images.unsplash.com/photo-1777480577334-2542aac17e4f?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      },
+      {
+        id: '10a20a-preta',
+        label: '10A 20A Preta',
+        price: 0,
+        stock: 20,
+        weightKg: 0.4,
+        image: 'https://images.unsplash.com/photo-1777480640336-cb0cfdb3d0ce?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      },
+    ],
+  },
+ {
+  id: 'tomada-redonda',
+  name: 'Tomada Redonda',
+  category: 'Adaptadores',
+  description: 'Adaptador para uso residencial e profissional.',
+  image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777563960/ChatGPT_Image_30_de_abr._de_2026_12_45_47_tlyr7c.png',
+  variants: [
+    {
+      id: '10a-branca',
+      label: '10A 20A Branca Colorida',
+      price: 0,
+      stock: 20,
+      weightKg: 0.2,
+      image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777563960/ChatGPT_Image_30_de_abr._de_2026_12_45_47_tlyr7c.png',
+    },
+    {
+      id: '10a-preta',
+      label: '10A 20A Preta',
+      price: 0,
+      stock: 20,
+      weightKg: 0.2,
+      image: 'https://res.cloudinary.com/dyex6ege2/image/upload/v1777562343/ChatGPT_Image_30_de_abr._de_2026_12_18_04_gvfgjg.png',
+    },
+    {
+      id: '10a-cinza',
+      label: '10A 20A Cinza',
+      price: 0,
+      stock: 20,
+      weightKg: 0.2,
+      image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777563424/ChatGPT_Image_30_de_abr._de_2026_12_31_02_qvraex.png',
+    
+    },
+  ],
+},
+  {
+  id: 'adaptador-femea',
+  name: 'Adaptador Fêmea',
+  category: 'Adaptadores',
+  description: 'Adaptador para uso residencial e profissional.',
+  image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777564130/ChatGPT_Image_30_de_abr._de_2026_12_48_23_f7qg7n.png',
+  variants: [
+    {
+      id: '10a-branca',
+      label: '10A Branca',
+      price: 0,
+      stock: 20,
+      weightKg: 0.2,
+      image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777564130/ChatGPT_Image_30_de_abr._de_2026_12_48_23_f7qg7n.png',
+    },
+    {
+      id: '10a-preta',
+      label: '10A Preta',
+      price: 0,
+      stock: 20,
+      weightKg: 0.2,
+      image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777564493/ChatGPT_Image_30_de_abr._de_2026_12_54_22_e0xxdc.png',
+    },
+    {
+      id: '20a-branca',
+      label: '20A Branca',
+      price: 0,
+      stock: 20,
+      weightKg: 0.2,
+      image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777564130/ChatGPT_Image_30_de_abr._de_2026_12_48_23_f7qg7n.png',
+    },
+    {
+      id: '20a-preta',
+      label: '20A Preta',
+      price: 0,
+      stock: 20,
+      weightKg: 0.2,
+      image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777564493/ChatGPT_Image_30_de_abr._de_2026_12_54_22_e0xxdc.png',
+    },
+  ],
+},
+  {
+    id: 'disco-corte-segmentado',
+    name: 'Disco de Corte Segmentado',
+    category: 'Ferramentas',
+    description: 'Disco para cortes.',
+    image: 'https://via.placeholder.com/600x400?text=Disco+de+Corte+Segmentado',
+    variants: [{ id: 'unico', label: 'Único', price: 0, stock: 20, weightKg: 0.3 }],
+  },
+  {
+    id: 'disco-corte-liso',
+    name: 'Disco de Corte Liso',
+    category: 'Ferramentas',
+    description: 'Disco para cortes.',
+    image: 'https://via.placeholder.com/600x400?text=Disco+de+Corte+Liso',
+    variants: [{ id: 'unico', label: 'Único', price: 0, stock: 20, weightKg: 0.3 }],
+  },
+  {
+    id: 'disco-corte-diamantado',
+    name: 'Disco de Corte Diamantado',
+    category: 'Ferramentas',
+    description: 'Disco para cortes.',
+    image: 'https://via.placeholder.com/600x400?text=Disco+de+Corte+Diamantado',
+    variants: [{ id: 'unico', label: 'Único', price: 0, stock: 20, weightKg: 0.3 }],
+  },
+  {
+    id: 'disco-corte-multiuso',
+    name: 'Disco de Corte Multiuso',
+    category: 'Ferramentas',
+    description: 'Disco para cortes.',
+    image: 'https://via.placeholder.com/600x400?text=Disco+de+Corte+Multiuso',
+    variants: [{ id: 'unico', label: 'Único', price: 0, stock: 20, weightKg: 0.3 }],
+  },
+  {
+    id: 'rebitadeira',
+    name: 'Rebitadeira',
+    category: 'Ferramentas',
+    description: 'Ferramenta para construção.',
+    image: 'https://via.placeholder.com/600x400?text=Rebitadeira',
+    variants: [{ id: 'unico', label: 'Único', price: 0, stock: 20, weightKg: 0.7 }],
+  },
+  {
+    id: 'trena-transparente',
+    name: 'Trena Transparente',
+    category: 'Ferramentas',
+    description: 'Ferramenta para construção.',
+    image: 'https://via.placeholder.com/600x400?text=Trena+Transparente',
+    variants: [{ id: '5m', label: '5 metros', price: 0, stock: 20, weightKg: 0.3 }],
+  },
+  {
+    id: 'trenas',
+    name: 'Trenas',
+    category: 'Ferramentas',
+    description: 'Ferramenta para construção.',
+    image: 'https://via.placeholder.com/600x400?text=Trenas',
+    variants: [
+      { id: '1m', label: '1 metro', price: 0, stock: 20, weightKg: 0.15 },
+      { id: '3m', label: '3 metros', price: 0, stock: 20, weightKg: 0.25 },
+      { id: '5m', label: '5 metros', price: 0, stock: 20, weightKg: 0.35 },
+      { id: '10m', label: '10 metros', price: 0, stock: 20, weightKg: 0.6 },
+    ],
+  },
+  {
+    id: 'chave-fendas',
+    name: 'Chave de Fendas',
+    category: 'Ferramentas',
+    description: 'Ferramenta para construção.',
+    image: 'https://via.placeholder.com/600x400?text=Chave+de+Fendas',
+    variants: [{ id: 'jogo-6-pecas', label: 'Jogo com 6 peças', price: 0, stock: 20, weightKg: 0.8 }],
+  },
+  {
+    id: 'chave-torx-allen',
+    name: 'Chave de Torx e Allen',
+    category: 'Ferramentas',
+    description: 'Modelo longo, jogo de chaves.',
+    image: 'https://via.placeholder.com/600x400?text=Chave+Torx+e+Allen',
+    variants: [{ id: 'modelo-longo', label: 'Modelo longo - jogo de chaves', price: 0, stock: 20, weightKg: 0.8 }],
+  },
+  {
+    id: 'estilete',
+    name: 'Estilete',
+    category: 'Ferramentas',
+    description: 'Ferramenta para construção.',
+    image: 'https://via.placeholder.com/600x400?text=Estilete',
+    variants: [{ id: '3-laminas', label: '3 lâminas', price: 0, stock: 20, weightKg: 0.2 }],
+  },
+  {
+    id: 'grifo-12',
+    name: 'Grifo 12 Polegadas',
+    category: 'Hidráulica',
+    description: 'Ferramenta para construção.',
+    image: 'https://via.placeholder.com/600x400?text=Grifo+12+Polegadas',
+    variants: [{ id: '12-pol', label: '12 polegadas', price: 0, stock: 20, weightKg: 1.1 }],
+  },
+  {
+    id: 'grifo-14',
+    name: 'Grifo 14 Polegadas',
+    category: 'Hidráulica',
+    description: 'Ferramenta para construção.',
+    image: 'https://via.placeholder.com/600x400?text=Grifo+14+Polegadas',
+    variants: [{ id: '14-pol', label: '14 polegadas', price: 0, stock: 20, weightKg: 1.3 }],
+  },
+  {
+    id: 'nivel-3-bolhas',
+    name: 'Nível 3 Bolhas',
     category: 'Construção',
-    description: 'Alta aderência para obras, reformas e acabamentos.',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80',
+    description: 'Ferramenta para construção.',
+    image: 'https://via.placeholder.com/600x400?text=Nivel+3+Bolhas',
     variants: [
-      { id: '5kg', label: '5 kg', price: 21.5, stock: 35, weightKg: 5 },
-      { id: '20kg', label: '20 kg', price: 59.9, stock: 12, weightKg: 20 },
+      { id: 'p', label: 'Tamanho P', price: 0, stock: 20, weightKg: 0.4 },
+      { id: 'g', label: 'Tamanho G', price: 0, stock: 20, weightKg: 0.6 },
     ],
   },
   {
-    id: 'fio-flexivel',
-    name: 'Fio Flexível 750V',
-    category: 'Fios',
-    description: 'Fio para instalações elétricas residenciais e comerciais.',
-    image: 'https://images.unsplash.com/photo-1555963966-b7ae5404b6ed?auto=format&fit=crop&w=900&q=80',
+    id: 'lixa-marmore',
+    name: 'Lixa Mármore',
+    category: 'Construção',
+    description: 'Ferramenta para construção.',
+    image: 'https://via.placeholder.com/600x400?text=Lixa+Marmore',
     variants: [
-      { id: '1-5mm', label: '1,5 mm', price: 89.9, stock: 18, weightKg: 1.4 },
-      { id: '2-5mm', label: '2,5 mm', price: 129.9, stock: 13, weightKg: 2.1 },
-      { id: '4mm', label: '4 mm', price: 189.9, stock: 8, weightKg: 3.3 },
+      { id: '50', label: '50', price: 0, stock: 20, weightKg: 0.1 },
+      { id: '100', label: '100', price: 0, stock: 20, weightKg: 0.1 },
+      { id: '200', label: '200', price: 0, stock: 20, weightKg: 0.1 },
     ],
   },
   {
-    id: 'alicate',
-    name: 'Alicate Universal',
-    category: 'Ferramentas',
-    description: 'Ferramenta robusta para corte, aperto e manutenção.',
-    image: 'https://images.unsplash.com/photo-1581147036324-c1c6eb89f4d1?auto=format&fit=crop&w=900&q=80',
-    variants: [
-      { id: '6pol', label: '6 polegadas', price: 28.9, stock: 22, weightKg: 0.45 },
-      { id: '8pol', label: '8 polegadas', price: 36.9, stock: 15, weightKg: 0.62 },
-    ],
+    id: 'aplicador-silicone',
+    name: 'Aplicador Silicone',
+    category: 'Construção',
+    description: 'Ferramenta para construção.',
+    image: 'https://via.placeholder.com/600x400?text=Aplicador+Silicone',
+    variants: [{ id: 'unico', label: 'Único', price: 0, stock: 20, weightKg: 0.6 }],
   },
   {
-    id: 'trena',
-    name: 'Trena Emborrachada',
-    category: 'Ferramentas',
-    description: 'Medição prática com trava reforçada e corpo resistente.',
-    image: 'https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=900&q=80',
-    variants: [
-      { id: '3m', label: '3 metros', price: 17.9, stock: 19, weightKg: 0.3 },
-      { id: '5m', label: '5 metros', price: 24.9, stock: 17, weightKg: 0.4 },
-    ],
+    id: 'desempenadeira-lisa',
+    name: 'Desempenadeira Lisa',
+    category: 'Desempenadeiras',
+    description: 'Ferramenta para construção.',
+    image: 'https://via.placeholder.com/600x400?text=Desempenadeira+Lisa',
+    variants: [{ id: 'unico', label: 'Único', price: 0, stock: 20, weightKg: 0.5 }],
+  },
+  {
+    id: 'desempenadeira-corrugada',
+    name: 'Desempenadeira Corrugada',
+    category: 'Desempenadeiras',
+    description: 'Ferramenta para construção.',
+    image: 'https://via.placeholder.com/600x400?text=Desempenadeira+Corrugada',
+    variants: [{ id: 'unico', label: 'Único', price: 0, stock: 20, weightKg: 0.5 }],
   },
 ];
 
@@ -423,7 +689,7 @@ export default function App() {
               </div>
 
               <div className="hero-image-card">
-                <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=80" alt="Produtos de loja" />
+                <img src="https://images.unsplash.com/photo-1777474739203-b85511959515?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Produtos de loja" />
                 <div className="hero-stats">
                   <div className="stat"><strong>{PRODUCTS.length}+</strong><span>produtos no catálogo</span></div>
                   <div className="stat"><strong>{CATEGORIES.length - 1}</strong><span>abas de categorias</span></div>
@@ -454,7 +720,7 @@ export default function App() {
                 return (
                   <article key={product.id} className="product-card">
                     <div className="product-img">
-                      <img src={product.image} alt={product.name} />
+                      <img src={variant.image || product.image} alt={product.name} />
                       <span className="tag">{product.category}</span>
                     </div>
                     <div className="product-body">
@@ -510,7 +776,7 @@ export default function App() {
                     {cartItems.map((item) => (
                       <div key={`${item.productId}-${item.variantId}`} className="cart-card">
                         <div className="cart-row">
-                          <img src={item.product.image} alt={item.product.name} />
+                          <img src={item.variant.image || item.product.image} alt={item.product.name} />
                           <div style={{ flex: 1 }}>
                             <div style={{ display: 'flex', justifyContent: 'space-between', gap: 10 }}>
                               <div><h3>{item.product.name}</h3><p>{item.variant.label} • {money(item.variant.price)}</p></div>
