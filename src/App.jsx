@@ -673,7 +673,7 @@ unitPrice: 1.50,
     name: 'Fio Sil',
     category: 'Eletrica',
     unitPrice: 278.00,
-    description: '',
+    description: '0',
     image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777593035/br-11134207-7r98o-m1y4zqda1ftrf2_fsfhis.jpg',
     variants: [
       { id: '2.5m', label: '2.5mm', price: 278.00, stock: 100, weightKg: 0.15 },
