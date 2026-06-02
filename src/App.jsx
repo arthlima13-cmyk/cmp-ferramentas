@@ -849,8 +849,6 @@ export default function App() {
                   <button className="white-button" onClick={() => setCartOpen(true)}>Abrir carrinho</button>
                 </div>
                 <div className="features">  
-                  <div className="feature-card"><strong>Abas editáveis</strong><p>Categorias simples para você ampliar depois.</p></div>
-                  <div className="feature-card"><strong>Variações</strong><p>Cada tamanho pode ter preço, estoque e peso próprios.</p></div>
                   <div className="feature-card"><strong>WhatsApp</strong><p>Pedido só libera depois dos dados e frete calculados.</p></div>
                 </div>
               </div>
