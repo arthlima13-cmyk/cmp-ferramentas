@@ -2,8 +2,8 @@ import React, { useMemo, useState } from 'react';
 
 const STORE = {
   name: 'CMP Ferramentas',
-  whatsapp: '5511975410095',
-  phoneLabel: '(11) 97541-0095',
+  whatsapp: '5517936188454',
+  phoneLabel: '(17) 93618-8454',
   location: 'Atendimento em todo o Brasil',
 };
 
@@ -17,71 +17,106 @@ const CATEGORIES = [
 ];
 
 const PRODUCTS = [
-  {
-    id: 'adap-001',
-    name: 'Adaptador T Reforçado',
-    category: 'Adaptadores',
-    description: 'Adaptador para uso residencial e profissional.',
-    image: 'https://images.unsplash.com/photo-1777476682610-277d7c15915f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    variants: [
-      { id: '10a', label: '10A 20A', price: 1.30, stock: 500, weightKg: 0.2 },
-  
-    
-    ],
-  },
-  {
-    id: 'adap-002',
-    name: 'Adaptador T ',
-    category: 'Adaptadores',
-    description: 'Adaptador para uso residencial e profissional.',
-    image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777580045/ChatGPT_Image_30_de_abr._de_2026_17_13_43_wpzsxb.png',
-    variants: [
-      { id: '10a', label: '10A 20A', price: 1.30, stock: 500, weightKg: 0.2 },
-  
-    
-    ],
-  },
+
+   {
+  id: 'adap-001',
+  name: 'Adaptador T Reforçado',
+  category: 'Adaptadores',
+  description: 'Adaptador para uso residencial e profissional.',
+  image: 'https://images.unsplash.com/photo-1777476682610-277d7c15915f?q=80&w=1470&auto=format&fit=crop',
+  unitPrice: 1.40,
+  variants: [
+    { id: '25pc', label: '25 Uni', price: 38.50, stock: 500, weightKg: 0.2 },
+    { id: '50pc', label: '50 Uni', price: 70.00, stock: 500, weightKg: 0.2 },
+    { id: '100', label: '100 Uni', price: 125.00, stock: 2000, weightKg: 0.2 },
+  ],
+},
+   {
+  id: 'adap-001',
+  name: 'Adaptador T Comum',
+  category: 'Adaptadores',
+  description: 'Adaptador para uso residencial e profissional.',
+  image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777580045/ChatGPT_Image_30_de_abr._de_2026_17_13_43_wpzsxb.png',
+  unitPrice: 1.20,
+  variants: [
+    { id: '25pc', label: '25 Uni', price: 32.50, stock: 500, weightKg: 0.2 },
+    { id: '50pc', label: '50 Uni', price: 60.00, stock: 500, weightKg: 0.2 },
+    { id: '100', label: '100 Uni', price: 115.00, stock: 2000, weightKg: 0.2 },
+  ],
+},
   {
     id: 'adap-003',
     name: 'Adaptador Cubo Colorido',
     category: 'Adaptadores',
+    unitPrice: 2.60, 
     description: 'Adaptador para uso residencial e profissional.',
     image: 'https://images.unsplash.com/photo-1777475369764-ab87f1ae4c9c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     variants: [
-      { id: '10a', label: '10A 20A', price: 2.50, stock:500, weightKg: 0.2 },
-    
+         { id: '25pc', label: '25 Uni', price: 65.00, stock: 500, weightKg: 0.2 },
+    { id: '50pc', label: '50 Uni', price: 125.00, stock: 500, weightKg: 0.2 },
+    { id: '100', label: '100 Uni', price: 240.00, stock: 2000, weightKg: 0.2 },
     ],
   },
   {
     id: 'adap-004',
     name: 'Adaptador Redondo Colorido',
     category: 'Adaptadores',
+     unitPrice: 2.60,
     description: 'Adaptador para uso residencial e profissional.',
     image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1779400489/ChatGPT_Image_21_de_mai._de_2026_18_54_18_ilu1ai.png',
     variants: [
-      { id: '10a', label: '10A 20A', price: 2.50, stock: 500, weightKg: 0.2 },
+      { id: '25pc', label: '25 Uni', price: 65.00, stock: 500, weightKg: 0.2 },
+    { id: '50pc', label: '50 Uni', price: 125.00, stock: 500, weightKg: 0.2 },
+    { id: '100', label: '100 Uni', price: 240.00, stock: 2000, weightKg: 0.2 }
     
     ],
   },
   {
     id: 'adap-005',
-    name: 'Pino Macho',
+    name: 'Pino Macho Branco',
     category: 'Adaptadores',
+    unitPrice: 1.40,
     description: 'Adaptador para uso residencial e profissional.',
-    image: 'https://images.unsplash.com/photo-1777477280302-8fd92dfa2182?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1780372112/ADAPTADOR_MACHO_nnbsym.png',
     variants: [
       {
-        id: 'branco',
-        label: 'Branco',
-        price: 1.30,
+        id: 'branco1',
+        label: 'Branco - 50 Uni',
+        price: 70.00,
         stock: 500,
         weightKg: 0.1,
-        image: 'https://images.unsplash.com/photo-1777477280302-8fd92dfa2182?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1780372112/ADAPTADOR_MACHO_nnbsym.png',
       },
       {
-        id: 'preto',
-        label: 'Preto',
-        price: 1.30,
+        id: 'branco2',
+        label: 'Branco - 100 Uni',
+        price: 140.00,
+        stock: 500,
+        weightKg: 0.1,
+        image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1780372112/ADAPTADOR_MACHO_nnbsym.png',
+      },
+    ],
+  },
+   {
+    id: 'adap-005',
+    name: 'Pino Macho Preto',
+    category: 'Adaptadores',
+    unitPrice: 1.40,
+    description: 'Adaptador para uso residencial e profissional.',
+    image: 'https://images.unsplash.com/photo-1777480226851-43e7f83d0182?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    variants: [
+      {
+        id: 'preto1',
+        label: 'Preto - 50 Uni',
+        price: 70.00,
+        stock: 500,
+        weightKg: 0.1,
+        image: 'https://images.unsplash.com/photo-1777480226851-43e7f83d0182?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      },
+      {
+        id: 'preto2',
+        label: 'Preto - 100 Uni',
+        price: 140.00,
         stock: 500,
         weightKg: 0.1,
         image: 'https://images.unsplash.com/photo-1777480226851-43e7f83d0182?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
@@ -92,54 +127,87 @@ const PRODUCTS = [
     id: 'adap-006',
     name: 'Bob Esponja Porcelana',
     category: 'Adaptadores',
+    unitPrice: 1.40,
     description: 'Adaptador para uso residencial e profissional.',
     image: 'https://images.unsplash.com/photo-1777487932963-f4c7c5378bbd?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     variants: [
-      { id: '10a', label: '10A 20A', price: 1.50, stock: 500, weightKg: 0.2 },
-     
-    ],
+   { id: '25pc', label: '25 Uni', price: 38.50, stock: 500, weightKg: 0.2 },
+    { id: '50pc', label: '50 Uni', price: 70.00, stock: 500, weightKg: 0.2 },
+    { id: '100', label: '100 Uni', price: 125.00, stock: 2000, weightKg: 0.2 },
+  ],
   },
   {
     id: 'adap-007',
     name: 'Bob Esponja Tradicional',
     category: 'Adaptadores',
+    unitPrice: 1.30,
     description: 'Adaptador para uso residencial e profissional.',
     image: 'https://images.unsplash.com/photo-1777487932963-f4c7c5378bbd?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     variants: [
-      { id: '10a', label: '10A 20A', price: 0.90, stock: 500, weightKg: 0.2 },
-     
-    ],
+     { id: '25pc', label: '25 Uni', price: 37.50, stock: 500, weightKg: 0.2 },
+    { id: '50pc', label: '50 Uni', price: 65.00, stock: 500, weightKg: 0.2 },
+    { id: '100', label: '100 Uni', price: 115.00, stock: 2000, weightKg: 0.2 },
+  ],
   },
   {
     id: 'adap-008',
     name: 'Adaptador Flexível Fixo',
     category: 'Adaptadores',
+      unitPrice: 1.80,
     description: 'Adaptador para uso residencial e profissional.',
     image: 'https://images.unsplash.com/photo-1777488110029-bde929b0267f?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     variants: [
-      { id: '10a', label: '10A 20A', price: 1.60, stock: 500, weightKg: 0.3 },
-      
-    ],
+      { id: '25pc', label: '25 Uni', price: 45.00, stock: 500, weightKg: 0.2 },
+    { id: '50pc', label: '50 Uni', price: 87.50, stock: 500, weightKg: 0.2 },
+    { id: '100', label: '100 Uni', price: 170.00, stock: 2000, weightKg: 0.2 },
+   ],
   },
   {
-    id: 'adap-009',
+    id: 'adap-0029',
     name: 'Tomada em Barra',
     category: 'Adaptadores',
+      unitPrice: 2.50,
     description: 'Adaptador para uso residencial e profissional.',
     image: 'https://images.unsplash.com/photo-1777480577334-2542aac17e4f?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     variants: [
       {
-        id: '10a20a-branca',
-        label: '10A 20A Branca',
-        price: 0,
+        id: '10abranca21',
+        label: 'Branca 10A/20A - 50 Uni ',
+        price: 125.00,
         stock: 500,
         weightKg: 0.4,
         image: 'https://images.unsplash.com/photo-1777480577334-2542aac17e4f?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       },
       {
-        id: '10a20a-preta',
-        label: '10A 20A Preta',
-        price: 0,
+        id: '10a2branca4',
+        label: 'Branca 10A/20A - 100 Uni',
+        price: 250.00,
+        stock: 500,
+        weightKg: 0.4,
+        image: 'https://images.unsplash.com/photo-1777480577334-2542aac17e4f?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      },
+    ],
+  },
+ {
+    id: 'adap-0020',
+    name: 'Tomada em Barra',
+    category: 'Adaptadores',
+      unitPrice: 2.50,
+    description: 'Adaptador para uso residencial e profissional.',
+    image: 'https://images.unsplash.com/photo-1777480577334-2542aac17e4f?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    variants: [
+      {
+        id: '10a2preta3',
+        label: 'Preta 10A/20A - 50 Uni',
+        price: 125.00,
+        stock: 500,
+        weightKg: 0.4,
+        image: 'https://images.unsplash.com/photo-1777480640336-cb0cfdb3d0ce?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      },
+       {
+        id: '10a2preta4',
+        label: 'Preta 10A/20A - 100 Uni',
+        price: 250.00,
         stock: 500,
         weightKg: 0.4,
         image: 'https://images.unsplash.com/photo-1777480640336-cb0cfdb3d0ce?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
@@ -150,29 +218,75 @@ const PRODUCTS = [
   id: 'adap-010',
   name: 'Tomada Redonda',
   category: 'Adaptadores',
+   unitPrice: 1.50,
   description: 'Adaptador para uso residencial e profissional.',
   image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777563960/ChatGPT_Image_30_de_abr._de_2026_12_45_47_tlyr7c.png',
   variants: [
     {
       id: '10a-branca',
-      label: '10A 20A Branca Colorida',
-      price: 0,
+      label: '10A/20A Branca Colorida - 50 Uni',
+      price: 75.00,
       stock: 500,
       weightKg: 0.2,
       image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777563960/ChatGPT_Image_30_de_abr._de_2026_12_45_47_tlyr7c.png',
     },
-    {
-      id: '10a-preta',
-      label: '10A 20A Preta',
-      price: 0,
+     {
+      id: '10a-branca2',
+      label: '10A/20A Branca Colorida - 100 Uni',
+      price: 150,
+      stock: 500,
+      weightKg: 0.2,
+      image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777563960/ChatGPT_Image_30_de_abr._de_2026_12_45_47_tlyr7c.png',
+    },
+  ],
+},
+  {
+  id: 'adap-010',
+  name: 'Tomada Redonda',
+  category: 'Adaptadores',
+   unitPrice: 1.50,
+  description: 'Adaptador para uso residencial e profissional.',
+  image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777563960/ChatGPT_Image_30_de_abr._de_2026_12_45_47_tlyr7c.png',
+  variants: [
+        {
+      id: '10a-preta1',
+      label: '10A/20A Preta - 50 Uni',
+      price: 75.00,
       stock: 500,
       weightKg: 0.2,
       image: 'https://res.cloudinary.com/dyex6ege2/image/upload/v1777562343/ChatGPT_Image_30_de_abr._de_2026_12_18_04_gvfgjg.png',
     },
-    {
+     {
+      id: '10a-preta2',
+      label: '10A/20A Preta - 100 Uni',
+      price: 150.00,
+      stock: 500,
+      weightKg: 0.2,
+      image: 'https://res.cloudinary.com/dyex6ege2/image/upload/v1777562343/ChatGPT_Image_30_de_abr._de_2026_12_18_04_gvfgjg.png',
+    
+    },
+  ],
+},
+  {
+  id: 'adap-01012',
+  name: 'Tomada Redonda',
+  category: 'Adaptadores',
+   unitPrice: 1.50,
+  description: 'Adaptador para uso residencial e profissional.',
+  image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777563424/ChatGPT_Image_30_de_abr._de_2026_12_31_02_qvraex.png',
+  variants: [
+        {
       id: '10a-cinza',
-      label: '10A 20A Cinza',
-      price: 0,
+      label: '10A/20A Preta - 50 Uni',
+      price: 75.00,
+      stock: 500,
+      weightKg: 0.2,
+      image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777563424/ChatGPT_Image_30_de_abr._de_2026_12_31_02_qvraex.png',
+    },
+     {
+      id: '10a-ciwnza',
+      label: '10A/20A Preta - 100 Uni',
+      price: 150.00,
       stock: 500,
       weightKg: 0.2,
       image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777563424/ChatGPT_Image_30_de_abr._de_2026_12_31_02_qvraex.png',
@@ -184,37 +298,82 @@ const PRODUCTS = [
   id: 'adap-011',
   name: 'Adaptador Fêmea',
   category: 'Adaptadores',
+unitPrice: 1.80,
   description: 'Adaptador para uso residencial e profissional.',
   image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777564130/ChatGPT_Image_30_de_abr._de_2026_12_48_23_f7qg7n.png',
   variants: [
     {
-      id: '10a-branca',
-      label: '10A Branca',
-      price: 0,
+      id: '10a-branca1',
+      label: '10A Branca - 50 Uni',
+      price: 90.00,
       stock: 500,
       weightKg: 0.2,
       image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777564130/ChatGPT_Image_30_de_abr._de_2026_12_48_23_f7qg7n.png',
     },
     {
-      id: '10a-preta',
-      label: '10A Preta',
-      price: 0,
+      id: '10a-branca2',
+      label: '10A Branca - 100 Uni',
+      price: 180.00,
+      stock: 500,
+      weightKg: 0.2,
+      image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777564130/ChatGPT_Image_30_de_abr._de_2026_12_48_23_f7qg7n.png',
+    },
+{
+      id: '20a-branca1',
+      label: '20A Branca - 50 Uni',
+      price: 90.00,
+      stock: 2000,
+      weightKg: 0.2,
+      image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777564130/ChatGPT_Image_30_de_abr._de_2026_12_48_23_f7qg7n.png',
+    },
+    {
+      id: '20a-branca2',
+      label: '20A Branca - 100 Uni',
+      price: 180.00,
+      stock: 2000,
+      weightKg: 0.2,
+      image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777564130/ChatGPT_Image_30_de_abr._de_2026_12_48_23_f7qg7n.png',
+    },
+  ],
+},
+     {
+  id: 'adap-0112',
+  name: 'Adaptador Fêmea',
+  category: 'Adaptadores',
+unitPrice: 1.50,
+  description: 'Adaptador para uso residencial e profissional.',
+  image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777564130/ChatGPT_Image_30_de_abr._de_2026_12_48_23_f7qg7n.png',
+  variants: [
+ {
+      id: '10a-prweta',
+      label: '10A Preta - 50 Uni',
+      price: 90.00,
+      stock: 500,
+      weightKg: 0.2,
+      image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777564493/ChatGPT_Image_30_de_abr._de_2026_12_54_22_e0xxdc.png',
+   
+    },
+    {
+      id: '10a-preeta2',
+      label: '10A Preta - 100 Uni',
+      price: 180.00,
+      stock: 500,
+      weightKg: 0.2,
+      image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777564493/ChatGPT_Image_30_de_abr._de_2026_12_54_22_e0xxdc.png',
+   
+    },
+    {
+      id: '20a-prewta1',
+      label: '20A Preta - 50 Uni',
+      price: 90.00,
       stock: 500,
       weightKg: 0.2,
       image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777564493/ChatGPT_Image_30_de_abr._de_2026_12_54_22_e0xxdc.png',
     },
-    {
-      id: '20a-branca',
-      label: '20A Branca',
-      price: 0,
-      stock: 20,
-      weightKg: 0.2,
-      image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777564130/ChatGPT_Image_30_de_abr._de_2026_12_48_23_f7qg7n.png',
-    },
-    {
-      id: '20a-preta',
-      label: '20A Preta',
-      price: 0,
+        {
+      id: '20a-pretwa2',
+      label: '20A Preta - 100 Uni',
+      price: 180.00,
       stock: 500,
       weightKg: 0.2,
       image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777564493/ChatGPT_Image_30_de_abr._de_2026_12_54_22_e0xxdc.png',
@@ -904,7 +1063,7 @@ export default function App() {
                           <h3>{product.name}</h3>
                           <p>{product.description}</p>
                         </div>
-                        <div className="price-box"><small>Preço</small><strong>{money(variant.price)}</strong></div>
+                        <div className="price-box"><small>Preço unitário</small><strong>{money(product.unitPrice)}</strong></div>
                       </div>
                       <p className="variant-title">Especificação</p>
                       <div className="variants">
