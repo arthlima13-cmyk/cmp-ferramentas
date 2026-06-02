@@ -947,9 +947,8 @@ export default function App() {
         .stat strong { color: #dc2626; font-size: 34px; display: block; }
         .section { max-width: 1200px; margin: 0 auto; padding: 34px 16px; }
         .filter-box { border: 1px solid #dbeafe; border-radius: 28px; padding: 16px; box-shadow: 0 6px 18px rgba(15,23,42,.06); }
-
-        .catalog-layout { max-width: 1280px; margin: 0 auto; padding: 34px 8px; display: grid; grid-template-columns: 220px 1fr; gap: 18px; align-items: start; }
-        .sidebar-categories { position: sticky; top: 92px; align-self: start; border: 1px solid #dbeafe; border-radius: 24px; padding: 16px; background: #ffffff; box-shadow: 0 6px 18px rgba(15,23,42,.06); }
+        .catalog-layout {max-width: 1280px;margin: 0 auto;padding: 34px 16px;display: block;}
+        .sidebar-categories {display: none;}
         .sidebar-title { margin: 0 0 14px; color: #dc2626; font-size: 13px; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px; }
         .sidebar-categories .tabs { display: grid; gap: 10px; }
         .sidebar-categories .tab { width: 100%; text-align: left; justify-content: flex-start; }
@@ -964,6 +963,9 @@ export default function App() {
         .section h2 { color: #08245c; margin: 8px 0 22px; font-size: 34px; }
         .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
         .product-card { overflow: hidden; border: 1px solid #dbeafe; background: #fff; border-radius: 28px; box-shadow: 0 6px 18px rgba(15,23,42,.06); }
+        .category-cards {display: grid;grid-template-columns: repeat(4, 1fr);gap: 16px;margin: 0 0 26px;}
+        .category-card {border: 1px solid #dbeafe;background: #fff;color: #08245c;border-radius: 22px;padding: 22px 16px;min-height: 90px;font-weight: 900;cursor: pointer;box-shadow: 0 6px 18px rgba(15,23,42,.06);}
+        .category-card.active {background: #08245c;color: #fff;}
         .product-img { position: relative; height: 220px; background: #eff6ff; }
         .product-img img { width: 100%; height: 100%; object-fit: cover; }
         .tag { position: absolute; top: 16px; left: 16px; background: #dc2626; color: #fff; padding: 7px 12px; border-radius: 999px; font-size: 12px; font-weight: 900;display: none; }
@@ -1091,8 +1093,18 @@ export default function App() {
             </aside>
 
             <div className="products-area">
-              <p className="section-title-small">Catálogo editável</p>
-              <h2>Produtos disponíveis</h2>
+              <p className="section-title-small">Catálogo CMP</p>
+              <h2>Produtos em Oferta</h2><div className="category-cards">
+  {CATEGORIES.filter((item) => item !== 'Todos').map((item) => (
+    <button
+      key={item}
+      className={`category-card ${category === item ? 'active' : ''}`}
+      onClick={() => setCategory(item)}
+    >
+      <span>{item}</span>
+    </button>
+  ))}
+</div>
 
               <div className="products-grid">
               {filteredProducts.map((product) => {
