@@ -182,3 +182,14 @@
     border-right-color: var(--border);
   }
 }
+.product-badge {
+  display: inline-block;
+  background: #ffcc00;
+  color: #1f2937;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}

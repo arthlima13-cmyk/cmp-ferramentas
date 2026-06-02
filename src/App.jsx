@@ -22,6 +22,7 @@ const PRODUCTS = [
   id: 'adap-001',
   name: 'Adaptador T Reforçado',
   category: 'Adaptadores',
+  badge: 'Oferta Especial',
   description: 'Adaptador para uso residencial e profissional.',
   image: 'https://images.unsplash.com/photo-1777476682610-277d7c15915f?q=80&w=1470&auto=format&fit=crop',
   unitPrice: 1.40,
@@ -35,6 +36,7 @@ const PRODUCTS = [
   id: 'adap-001',
   name: 'Adaptador T Comum',
   category: 'Adaptadores',
+  badge: 'Oferta Especial',
   description: 'Adaptador para uso residencial e profissional.',
   image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777580045/ChatGPT_Image_30_de_abr._de_2026_17_13_43_wpzsxb.png',
   unitPrice: 1.20,
@@ -953,7 +955,7 @@ export default function App() {
         .tag { position: absolute; top: 16px; left: 16px; background: #dc2626; color: #fff; padding: 7px 12px; border-radius: 999px; font-size: 12px; font-weight: 900;display: none; }
         .product-body { padding: 20px; }
         .product-top { display: flex; justify-content: space-between; gap: 14px; align-items: flex-start; }
-        .product-top h3 { margin: 0; color: #08245c; font-size: 21px; }
+        .product-badge {display: inline-block;background: #ffcc00;color: #1f2937;font-size: 11px;font-weight: 800;padding: 4px 10px;border-radius: 999px;margin-bottom: 8px;text-transform: uppercase;}
         .product-top p { color: #1d4ed8; line-height: 1.5; font-size: 14px; }
         .price-box { flex-shrink: 0; background: #eff6ff; padding: 10px 12px; border-radius: 16px; text-align: right; }
         .price-box small { color: #1d4ed8; font-weight: 800; text-transform: uppercase; }
@@ -1090,7 +1092,7 @@ export default function App() {
                     <div className="product-body">
                       <div className="product-top">
                         <div>
-                          <h3>{product.name}</h3>
+                          {product.badge && (<span className="product-badge">{product.badge}</span>)}<h3>{product.name}</h3>
                           <p>{product.description}</p>
                         </div>
                         <div className="price-box"><small>Preço unitário</small><strong>{money(product.unitPrice)}</strong></div>
