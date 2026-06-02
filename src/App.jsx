@@ -41,9 +41,9 @@ const PRODUCTS = [
   image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777580045/ChatGPT_Image_30_de_abr._de_2026_17_13_43_wpzsxb.png',
   unitPrice: 1.20,
   variants: [
-    { id: '25pc', label: '25 Uni', price: 32.50, stock: 500, weightKg: 0.2 },
-    { id: '50pc', label: '50 Uni', price: 60.00, stock: 500, weightKg: 0.2 },
-    { id: '100', label: '100 Uni', price: 115.00, stock: 2000, weightKg: 0.2 },
+    { id: '25pc2', label: '25 Uni', price: 32.50, stock: 500, weightKg: 0.2 },
+    { id: '50pc2', label: '50 Uni', price: 60.00, stock: 500, weightKg: 0.2 },
+    { id: '1002', label: '100 Uni', price: 115.00, stock: 2000, weightKg: 0.2 },
   ],
 },
   {
