@@ -27,9 +27,9 @@ const PRODUCTS = [
   image: 'https://images.unsplash.com/photo-1777476682610-277d7c15915f?q=80&w=1470&auto=format&fit=crop',
   unitPrice: 1.40,
   variants: [
-    { id: '25pc', label: '25 Uni', price: 38.50, stock: 500, weightKg: 0.2 },
-    { id: '50pc', label: '50 Uni', price: 70.00, stock: 500, weightKg: 0.2 },
-    { id: '100', label: '100 Uni', price: 125.00, stock: 2000, weightKg: 0.2 },
+    { id: '25pwc', label: '25 Uni', price: 38.50, stock: 500, weightKg: 0.2 },
+    { id: '50wpc', label: '50 Uni', price: 70.00, stock: 500, weightKg: 0.2 },
+    { id: '100ww', label: '100 Uni', price: 125.00, stock: 2000, weightKg: 0.2 },
   ],
 },
    {
@@ -43,7 +43,7 @@ const PRODUCTS = [
   variants: [
     { id: '25pc2', label: '25 Uni', price: 32.50, stock: 500, weightKg: 0.2 },
     { id: '50pc2', label: '50 Uni', price: 60.00, stock: 500, weightKg: 0.2 },
-    { id: '1002', label: '100 Uni', price: 115.00, stock: 2000, weightKg: 0.2 },
+    { id: '1002s', label: '100 Uni', price: 115.00, stock: 2000, weightKg: 0.2 },
   ],
 },
   {
