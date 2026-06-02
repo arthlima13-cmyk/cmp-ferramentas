@@ -285,14 +285,14 @@ const PRODUCTS = [
   name: 'Tomada Redonda',
   category: 'Adaptadores',
   badge: 'Oferta Especial',
-   unitPrice: 1.50,
+   unitPrice: 1.80,
   description: '',
   image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777563424/ChatGPT_Image_30_de_abr._de_2026_12_31_02_qvraex.png',
   variants: [
         {
       id: '10a-cinza',
       label: '10A/20A Preta - 50 Uni',
-      price: 75.00,
+      price: 90.00,
       stock: 500,
       weightKg: 0.2,
       image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777563424/ChatGPT_Image_30_de_abr._de_2026_12_31_02_qvraex.png',
@@ -300,7 +300,7 @@ const PRODUCTS = [
      {
       id: '10a-ciwnza',
       label: '10A/20A Preta - 100 Uni',
-      price: 150.00,
+      price: 180.00,
       stock: 500,
       weightKg: 0.2,
       image: 'https://res.cloudinary.com/dyex6ege2/image/upload/q_auto/f_auto/v1777563424/ChatGPT_Image_30_de_abr._de_2026_12_31_02_qvraex.png',
