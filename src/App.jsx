@@ -843,14 +843,12 @@ export default function App() {
               <div>
                 <span className="pill">🚚 Frete calculado antes do WhatsApp</span>
                 <h2>Ferramentas, materiais e itens elétricos para sua casa ou loja.</h2>
-                <p>Escolha os produtos, selecione a quantidade, calcule o frete e envie o pedido completo para o WhatsApp da CMP Ferramentas.</p>
+                <p>Escolha os produtos, selecione a quantidade, calcule o frete e envie o pedido completo para o WhatsApp da CMP Ferramentas.Pedido só liberado depois dos dados e frete calculado</p>
                 <div className="hero-buttons">
                   <a href="#produtos" className="red-link">Ver produtos</a>
                   <button className="white-button" onClick={() => setCartOpen(true)}>Abrir carrinho</button>
                 </div>
-                <div className="features">  
-                  <div className="feature-card"><strong>WhatsApp</strong><p>Pedido só libera depois dos dados e frete calculados.</p></div>
-                </div>
+                
               </div>
 
               <div className="hero-image-card">
